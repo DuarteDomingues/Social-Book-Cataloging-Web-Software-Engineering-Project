@@ -11,6 +11,8 @@ The developed application is a Web application for cataloging, searching and sha
 The application has a set of functionalities such as 
 reviews and comments, book collections and a buddy system.
 
+---
+
 ### Folder Organization:
 
 * The folder visao contains a pdf file with the project vision.
