@@ -1,6 +1,12 @@
 # Social-Book-Cataloging-Web-Software-Engineering-Project
 Social Book Cataloging Web Software Engineering Project
 
+### Final project of the course IASC (Inteligência Artificial para Sistemas Coginitivos)
+
+Engenharia Informática e Multimédia - ISEL
+
+---
+
 ### Technologies used: Python, Django, UML, HTML, CSS, JavaScript
 
 In this project a computer application was developed, based on several techniques and 
