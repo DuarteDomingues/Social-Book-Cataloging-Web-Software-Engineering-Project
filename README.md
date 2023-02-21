@@ -2,7 +2,7 @@
 
 ### Final project of the course ES (Engenharia de Software)
 
-Engenharia Informática e Multimédia - ISEL
+Mestrado Engenharia Informática e Multimédia - ISEL
 
 ---
 
