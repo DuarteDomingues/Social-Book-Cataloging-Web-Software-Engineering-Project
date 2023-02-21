@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>pesquisa</title>
+    <link href="{% static 'css/pesquisa.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="header_one" style="    height: 60px;  ">
+        <!-- Default Searchbar -->
+    <!--<div style="width: 81%; display: block; float: left; padding-left: 21px;"></div>-->
+  
+    
+    <div class="footer_pages">
+      <form>
+        <input type="search" class="search_top" name="q" placeholder="Search...">
+      </form>
+      
+      
+      <form method="post">
+        {% csrf_token %}
+        {{ form_barra.casa }}
+          <input type="submit" value="Home" class="button_foot" name="butao_casa">
+      
+        </form>
+      
+      
+        <form method="post">
+          {% csrf_token %}
+          {{ form_barra.colecao }}
+            <input type="submit" value="Collection" class="button_foot" name="butao_colecao">
+        
+          </form>
+      
+      
+          <form method="post">
+            {% csrf_token %}
+            {{ form_barra.procura }}
+              <input type="submit" value="Search" class="button_foot" name="butao_procura">
+          
+            </form>
+      
+      
+            <form method="post">
+              {% csrf_token %}
+              {{ form_barra.perfil }}
+                <input type="submit" value="Profile" class="button_foot" name="butao_perfil">
+            
+              </form>
+            
+            <form method="post">
+                {% csrf_token %}
+                {{ form_barra.logout }}
+                  <input type="submit" value="Logout" class="button_foot" name="butao_logout">
+              
+            </form>
+          
+  
+    </div>
+    
+      </div>
+
+      </div>
+
+  
+    <div class="numb_results">
+      
+      {% if num %}
+      <h3>{{num}} results</h3>
+      {% else %}
+      <h3>0 results</h3>
+      {% endif %}
+  </div>
+  
+  {% if livros %}
+  {% for livro in livros %}
+
+  <div class="book_info">
+
+    <a href ="{% url 'livro' livro.id_livro %}">
+
+      {% if livro.ref_foto == "default" %}
+      <img class="book_img" style="display: block; float: left;"  src="{% static 'images/default.jpg' %}"  >
+
+      {% else %}
+      <img class="book_img" style="display: block; float: left;"  src="{{livro.ref_foto}}""  >
+
+      {% endif %}
+    
+    </a>
+        <div class="text_book">
+          <h5>{{livro.titulo}}</h5>
+          <h6>{{livro.autor}}</h6>
+          
+          <div id="rating">
+            
+         <h3 style="float: left;">4.4 / 5</h3> 
+        
+          
+        </div>
+        
+         
+        </div>
+  
+      </div>
+	 
+	
+  
+      <br>
+      <br>
+      <br>
+      <div class="line_separator_2"></div>
+  <br>
+      {% endfor %}
+      {% endif %}
+   
+  
+  
+</body>
+</html>
+  
+  

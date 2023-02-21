@@ -1,0 +1,287 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>utilizador</title>
+    <link href="{% static 'css/utilizador.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="header_one" style="    height:38px;  ">
+      <!-- Default Searchbar -->
+  <!--<div style="width: 81%; display: block; float: left; padding-left: 21px;"></div>-->
+  <div class="footer_pages">
+    <div class="line"></div>
+    
+    
+    <form method="post">
+      {% csrf_token %}
+      {{ form_barra.casa }}
+        <input type="submit" value="Home" class="button_foot" name="butao_casa">
+    
+      </form>
+    
+    
+      <form method="post">
+        {% csrf_token %}
+        {{ form_barra.colecao }}
+          <input type="submit" value="Collection" class="button_foot" name="butao_colecao">
+      
+        </form>
+    
+    
+        <form method="post">
+          {% csrf_token %}
+          {{ form_barra.procura }}
+            <input type="submit" value="Search" class="button_foot" name="butao_procura">
+        
+          </form>
+    
+    
+          <form method="post">
+            {% csrf_token %}
+            {{ form_barra.perfil }}
+              <input type="submit" value="Profile" class="button_foot" name="butao_perfil">
+          
+            </form>
+          
+          <form method="post">
+              {% csrf_token %}
+              {{ form_barra.logout }}
+                <input type="submit" value="Logout" class="button_foot" name="butao_logout">
+            
+          </form>
+        
+  
+
+  </div>
+  
+    </div>
+    <br>
+  
+  
+    <div class="user_rating">
+  
+        <div class="profile_img" style="display: block; float: left; height: 50px; width: 50px; border-radius: 50%;">
+  
+            <img  style=" height: 50px; width: 50px;border-radius: 50%;"  src={% static utilizador_info.ref_foto %} >
+      
+      
+    </div>
+    
+    <div class="dropdown">
+      <button class="dropbtn">
+             Friends
+      </button>
+        <br>
+        <br>
+      <div class="dropdown-content">
+        {% if utilizadores %}
+        {% for utilizador in utilizadores %}
+          <a href="{% url 'utilizador' utilizador.id_utilizador %}">
+              <img  style=" height: 20px; width: 20px;border-radius: 50%;" src={% static utilizador.ref_foto %}
+
+              width="20" height="15"> {{utilizador.nome_utilizador}}</a>
+          
+        {% endfor %}
+        {% endif %}
+      </div>
+      <br>
+  </div>
+  <br>
+  <div class="opcoes">
+   
+
+    {% if opcao == 1%}
+
+    <h5>Friend request sent</h5>
+
+    {% endif %}
+
+    {% if opcao == 2%}
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form_barra.reading }}
+      <div class="cool_btn">
+
+        <input type="submit" value="send friend request" class="button_foot" name="butao_ped_amizade">
+      </div>
+      
+    </form>
+
+    {% endif %}
+
+  </div>
+
+    <div class=user_name_rate>
+      <div ></div>
+    <h5>{{utilizador_info.nome_utilizador}}</h5>
+  
+    </div>
+  
+    <div class="text_comment">
+      {{utilizador_info.descricao}}
+    </div>
+    <br>
+    <div class="line_separator_2"></div>
+<br>
+
+
+    
+
+    {% if utilizadores_pedidos %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form}}
+
+    <div class="checkbox-dropdown">
+      Friend Requests
+      <ul class="checkbox-dropdown-list">
+
+        {% for utilizador in utilizadores_pedidos %}
+        <li>
+          
+          <label>
+            
+            <input type="checkbox"  name="{{utilizador.id_utilizador}}"/>{{utilizador.nome_utilizador}} </label>
+            <img  style=" height: 20px; width: 20px;border-radius: 50%;" src={% static utilizador.ref_foto %}>
+        </li>
+      
+        {% endfor %}
+
+      </ul>
+    </div>
+    <br>
+
+    <div class="cool_btn">
+    <input type="submit" value="Accept"  name="adicionar_amigo">
+    </div>
+  </form>
+  {% endif %}
+  
+    <div class="overview">
+  
+      <h6>Collection</h6>
+     <div class="line_separator"></div>
+  
+  <br>
+      <div class="collection_div">
+        <div id="tag">
+        <h4>Already read</h4>
+      </div>
+        <br>
+        <br>
+        <br>
+        
+        {% if lista_ler %}
+        {% for livro in lista_ler %}
+        <a href="{% url 'livro' livro.id_livro %}">
+
+        <div class="box_1" (click)="goToBook()">
+          {% if livro.ref_foto == "default" %}
+
+          <img class="book_img"    src="{% static 'images/default.jpg' %}"  >
+          
+          {% else %}
+
+          <img class="book_img"    src="{{livro.ref_foto}}"  >
+          
+          {% endif %}
+          <h3>{{livro.titulo}}</h3>
+     
+          <h5>{{livro.autor}}</h5>
+  
+        </div>
+      </a>
+
+        {% endfor %}
+        {% endif %}
+
+        
+  
+      </div>
+  
+      <br>
+  
+      <div class="collection_div">
+        <div id="tag">
+        <h4>Reading</h4>
+      </div>
+        <br>
+        <br>
+        <br>
+  
+        
+        {% if lista_ja_leu %}
+        {% for livro in lista_ja_leu %}
+        <a href="{% url 'livro' livro.id_livro %}">
+
+        <div class="box_1" (click)="goToBook()">
+          {% if livro.ref_foto == "default" %}
+
+          <img class="book_img"    src="{% static 'images/default.jpg' %}"  >
+          
+          {% else %}
+
+          <img class="book_img"    src="{{livro.ref_foto}}"  >
+          
+          {% endif %}
+          <h3>{{livro.titulo}}</h3>
+          <h5>{{livro.autor}}</h5>
+        </div>
+      </a>
+        {% endfor %}
+        {% endif %}
+
+       
+        
+  
+      </div>
+      <br>
+  
+      <div class="collection_div">
+        <div id="tag">
+        <h4>Want to Read</h4>
+      </div>
+        <br>
+        <br>
+        <br>
+  
+        {% if lista_a_ler %}
+        {% for livro in lista_a_ler %}
+        <a href="{% url 'livro' livro.id_livro %}">
+
+        <div class="box_1" (click)="goToBook()">
+
+          {% if livro.ref_foto == "default" %}
+
+          <img class="book_img"    src="{% static 'images/default.jpg' %}"  >
+          
+          {% else %}
+
+          <img class="book_img"    src="{{livro.ref_foto}}"  >
+          
+          {% endif %}
+       
+
+          <h3>{{livro.titulo}}</h3>
+     
+          <h5>{{livro.autor}}</h5>
+  
+        </div>
+      </a>
+        {% endfor %}
+        {% endif %}
+       
+        
+        
+  
+      </div>
+  
+    </div>
+  
+  
+</body>
+</html>  

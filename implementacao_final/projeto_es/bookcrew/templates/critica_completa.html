@@ -1,0 +1,278 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>critica</title>
+    <link href="{% static 'css/critica_completa.css' %}" rel="stylesheet">
+  </head>
+
+<body>
+    <div class="header_one" style="    height:38px; ">
+      <!-- Default Searchbar -->
+  <!--<div style="width: 81%; display: block; float: left; padding-left: 21px;"></div>-->
+  <div class="footer_pages">
+    <div class="line"></div>
+    
+    
+    <form method="post">
+      {% csrf_token %}
+      {{ form_barra.casa }}
+        <input type="submit" value="Home" class="button_foot" name="butao_casa">
+    
+      </form>
+    
+    
+      <form method="post">
+        {% csrf_token %}
+        {{ form_barra.colecao }}
+          <input type="submit" value="Collection" class="button_foot" name="butao_colecao">
+      
+        </form>
+    
+    
+        <form method="post">
+          {% csrf_token %}
+          {{ form_barra.procura }}
+            <input type="submit" value="Search" class="button_foot" name="butao_procura">
+        
+          </form>
+    
+    
+          <form method="post">
+            {% csrf_token %}
+            {{ form_barra.perfil }}
+              <input type="submit" value="Profile" class="button_foot" name="butao_perfil">
+          
+            </form>
+          
+          <form method="post">
+              {% csrf_token %}
+              {{ form_barra.logout }}
+                <input type="submit" value="Logout" class="button_foot" name="butao_logout">
+            
+          </form>
+        
+    
+  
+
+  </div>
+  
+    </div>
+    
+  
+    <div class="book_rating"  >
+  
+      <div class="user_rating">
+  
+      <div class="profile_img" style="display: block; float: left; height: 35px; width: 35px; border-radius: 50%;">
+  
+        <a href ="{% url  'utilizador' utilizador.id_utilizador %}">
+
+          <img  style=" height: 35px; width: 35px;border-radius: 50%;"  src={% static utilizador.ref_foto %} >
+
+        </a>
+      </div>
+
+
+    <div class=user_name_rate>
+  
+    <h5>{{utilizador.nome_utilizador}}&nbsp;&nbsp;<span> rated with</span></h5>
+   
+    {% if critica.classif == 5%}
+
+    <div class="rate" >
+      <input type="radio" id="star5" name="rate" value="5" />
+      <label for="star5" title="text">5 stars</label>
+      <input type="radio" id="star4" name="rate" value="4" />
+      <label for="star4" title="text">4 stars</label>
+      <input type="radio" id="star3" name="rate" value="3" />
+      <label for="star3" title="text">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" />
+      <label for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text">1 star</label>
+    </div>
+    {% endif %}
+
+    {% if critica.classif == 4%}
+
+    <div class="rate" >
+  
+      <input type="radio" id="star4" name="rate" value="4" />
+      <label for="star4" title="text">4 stars</label>
+      <input type="radio" id="star3" name="rate" value="3" />
+      <label for="star3" title="text">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" />
+      <label for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text">1 star</label>
+    </div>
+    {% endif %}
+
+
+    {% if critica.classif == 3%}
+
+    <div class="rate" >
+    
+      <input type="radio" id="star3" name="rate" value="3" />
+      <label for="star3" title="text">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" />
+      <label for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text">1 star</label>
+    </div>
+    {% endif %}
+
+
+    {% if critica.classif == 2%}
+
+    <div class="rate" >
+
+      <input type="radio" id="star2" name="rate" value="2" />
+      <label for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text">1 star</label>
+    </div>
+    {% endif %}
+
+
+    {% if critica.classif == 1%}
+
+    <div class="rate" >
+ 
+      <input type="radio" id="star1" name="rate" value="1" />
+      <label for="star1" title="text">1 star</label>
+    </div>
+    {% endif %}
+
+    
+    
+    <br>
+    <!--<p>Thursday at 23:40</p> -->
+  </div>
+  
+    <div class="book_info">
+
+      <a href ="{% url 'livro' critica.id_livro %}">
+
+        {% if livro.ref_foto == "default" %}
+        <img class="book_img" style="display: block; float: left;"  src="{% static 'images/default.jpg' %}"  >
+  
+        {% else %}
+        <img class="book_img" style="display: block; float: left;"  src="{{livro.ref_foto}}""  >
+  
+        {% endif %}
+
+      </a>
+
+    <div class="text_book">
+      <h5>{{livro.titulo}}</h5>
+      <h6>{{livro.autor}}</h6>
+  
+      <a href ="{% url 'livro' critica.id_livro %}">
+
+      <button class="want_read_button" >
+       
+         want to read<span> </span> 
+      </button>
+    </a>
+  
+    </div>
+  </div>
+  <div style="height: 22px;"></div>
+
+  <input type="image" 
+  
+    style="width: 20px; height: 20px; padding-left:2px" src="{% static 'images/heart.png' %}">
+  
+  <input type="image" 
+  
+    style="width: 20px; height: 20px; " src="{% static 'images/msg_Dd.png' %}">
+  
+  
+  <div class="text_comment">
+    {{critica.texto}}
+  </div>
+  <div class="bottom_review">
+  <h6>{{critica.num_gostos}} likes</h6>
+  
+  </div>
+    </div>
+  
+    </div>
+
+
+    <br>
+    <div class="user_comments"  >
+
+
+    </div>
+
+    {% if comentarios %}
+    {% for com in comentarios %}
+    <div class="user_comments"  >
+
+      
+   <div style="height: 1px"></div>
+
+   
+      <div class="user_comment">
+        
+
+        {% if utilizadores_info %}
+        {% for utl in utilizadores_info %}
+
+        <a href ="{% url 'livro' critica.id_livro %}">
+
+        <div class="profile_img" style="display: block; float: left; height: 35px; width: 35px; border-radius: 50%;">
+          
+          <a href ="{% url  'utilizador' utl.id_utilizador %}">
+
+          
+            <img  style=" height: 35px; width: 35px;border-radius: 50%;" src={% static utl.ref_foto %} >
+            
+          </a>
+
+            </div>
+          </a>
+          
+        <h5>{{utilizador.nome_utilizador}}</h5>
+            {% endfor %}
+            {% endif %}
+
+        <h6>{{com.data}}</h6>
+  
+        <div class="user_text_comment">
+      {{com.texto}}
+        </div>
+      </div>
+      <div class="line_separator_2"></div>
+  
+      <br>
+      <br>
+      <br>
+
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    
+
+    <div class="user_comments">
+    
+      <br>
+<div id="form_div">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <div class="want_read_button_2">
+    <input type="submit" value="Comment">
+      </div>
+  </form>
+</div>
+    </div>
+ 
+  </body>
+    </html>
+  

@@ -1,0 +1,207 @@
+body{
+   font-family: 'Roboto', sans-serif;
+   overflow-x: hidden;
+   left:0;
+
+ }
+ 
+ .book_img{
+ 
+    height: 120px; 
+    width: 93px;
+    border-radius: 5px;
+ }
+ 
+ 
+ .book_rating{
+    color: black;
+   
+    background-color: #F6F6F6;
+    border-top: 1px solid #A7A7A7;
+    border-bottom: 1px solid #A7A7A7;
+    padding-left: 20px;
+ 
+ }
+ 
+ .user_name_rate h5{
+ 
+    color:#201D1D;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    left: 10px;
+ 
+ }
+ 
+ .user_name_rate span{
+    color: black;
+    font-weight: 100;
+    font-size: 12px;
+    
+ }
+ 
+ .profile_img{
+    background-color: purple;
+    border: 1px solid gray;
+ }
+
+ .search_top{
+   padding-left: 20px;
+   margin-left: 20px;
+ }
+ input[type="search"] {
+   width: 300px;
+   height: 30px;
+   border: 1px solid gray;
+   font-size: 14px;
+   color: gray;
+   border-radius: 15px;
+   
+ }
+ 
+ 
+ .book_info h5{
+ 
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    left: 15px;
+ 
+ }
+ .book_info h6{
+ 
+    font-size: 12px;
+    font-weight: 100;
+    position: relative;
+    left: 18px;
+    bottom: 10px;
+ }
+ 
+ .book_info{
+    margin-right: 20px;
+ }
+ 
+ 
+ .want_read_button{
+ 
+    --border-color: #848484;
+    --ion-color-primary: #DAD0C2;
+    --border-radius:8px;
+    --border-width: .02em; 
+    --border-style: solid;
+    --ion-font-family: 'Roboto', sans-serif;
+ 
+    width : 105px;
+    height: 20px;
+    font-weight: 60;
+    font-size: 11px;
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+    color: black;
+    --background-hover: #EBE1D2;
+    text-transform: none;
+ 
+ }
+ 
+ 
+ .button_rating{
+    background-color: #F6F6F6;
+    color: black;
+ }
+ 
+ .text_comment{
+ 
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 20px;
+ }
+ 
+ .bottom_review h6{
+ 
+    font-weight: 600;
+    font-size: 11px;
+    position: relative;
+    bottom: 8px;
+    
+ }
+ 
+ .bottom_review h5{
+ 
+    font-weight: 100;
+    font-size: 11px;
+    position: relative;
+    bottom: 20px;
+    color:#575757;
+    
+ }
+ 
+ 
+ .footer_pages {
+    position: fixed;
+    padding: 10px 10px 0px 0px;
+    top: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 35px;
+    background: #EBE1D2;
+    background: #EBE1D2;
+    border-bottom: 2px solid #A39494;
+
+    color:#201D1D;
+   display: flex;
+   gap: 2%; /* adds 10px space between items */
+   z-index: 999; /* set a high z-index value to ensure the search bar is always on top */
+ }
+ 
+ .button_foot{
+
+    
+    margin-left:10%;
+    background-color: #F6F6F6;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+
+ }
+
+ 
+ 
+ 
+ 
+ 
+ 
+ .rate {
+    height: 20px;
+    color: #ffc700;    
+    position:relative;
+    float: left;
+    left: 3.4%;
+    bottom: 20px;
+
+ 
+ }
+ .rate:not(:checked) > input {
+    position:relative;
+    top:-9999px;
+ }
+ .rate:not(:checked) > label {
+    float:left;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:16px;
+    color:#ffc700;
+ }
+ .rate:not(:checked) > label:before {
+    content: '★ ';
+ }
+ .rate > input:checked ~ label {
+    color: #ffc700;    
+ }
+ 

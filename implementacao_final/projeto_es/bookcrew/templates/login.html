@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>login</title>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+    <div class="header_div">
+      <ion-img id="header_img" style=" height: 170px ;"  src="assets/wide_logo.PNG" ></ion-img>
+    </div>
+    <div class="fill_div">
+    </div>
+
+    <br>
+
+
+    
+    
+    <div class="login">
+        <div class="login">
+  
+
+            <h1>Log-in</h1>
+            <p></p>
+            <p></p>
+    
+    
+            <div class="container py-5">
+                <h1>Login</h1>
+                <form method="POST">
+                  {% csrf_token %}
+                  {{ login_form }}
+                  <button class="btn btn-primary" type="submit">Login</button>
+                </form>
+                <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+              </div>
+
+
+
+            <a 
+            
+            href ="{% url 'register' %}">
+            <h2>Register a new account</h2>
+        </a>
+<br>            
+<br>            
+    
+<br>            
+    
+<br>            
+    
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,441 @@
+body{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.filler{
+
+    height: 110px;
+    width: 100%;
+}
+
+.book_img{
+    height: 140px; 
+    width: 115px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.book_stuff{
+
+    background-color: #F6F6F6;
+    color: black;
+    border-top: 1px solid ;
+    border-radius: 25px 25px 0px 0px;
+    
+}
+
+.filler_2{
+    height: 70px;
+}
+
+.book_stuff h2{
+
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.book_stuff h3{
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    position: relative;
+    bottom: px;
+}
+
+#stick{
+
+    height: 22px;
+    width: 1px;
+    background-color: black;
+    position: relative;
+    left: 13px;
+    bottom: 26px;
+}
+
+.book_rating_pages{
+    position: absolute;
+     left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#pp h6{
+    position: relative;
+    left: 22px;
+    bottom: 20%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.book_rating_pages h6{
+    position: relative;
+    right: 18px;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.small_text {
+
+    position: absolute;
+    left: 50%;
+   transform: translate(-50%, -50%);
+
+}
+
+.small_text h4{
+    font-size:9px;
+    position: relative;
+    right: 19px;
+    top: 5px;
+    font-weight: 100;
+}
+
+.ppmd {
+    position: absolute;
+    left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.ppmd h4{
+    font-size: 9px;
+    position: relative;
+    font-weight: 100;
+    left: 21px;
+    top: 5px;
+
+}
+
+
+
+
+
+#filler_3{
+    height: 50px;
+}
+
+.want_read_button{
+ 
+
+ 
+    width : 105px;
+    height: 20px;
+    font-weight: 60;
+    font-size: 11px;
+    position: relative;
+    top: 10px;
+    color: black;
+    text-transform: none;
+
+ }
+
+ .book_overview{
+    text-align: center;
+ }
+
+ .book_overview h3{
+
+    font-size: 16px;
+    font-weight: 600;
+ }
+
+ .line_separator{
+
+    width: 50% ;
+    height: 1px;
+    background-color: #848484;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#text_ov {
+
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 19px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+#comment_div{
+    position: relative;
+    bottom: 10px;
+}
+
+
+.rate_div h4{
+    margin-left: 20px;
+
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.puss{
+   text-align: center;
+
+}
+
+.rate_div{
+
+    position: relative;
+    bottom: 15px;
+}
+
+
+#review_div{
+    position: relative;
+    bottom: 10px;
+}
+
+
+
+
+.user_name_rate h5{
+ 
+    color:#201D1D;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    left: 0.9%;
+    text-align: left;
+ }
+ 
+ .user_name_rate span{
+    color: black;
+    font-weight: 100;
+    font-size: 12px;
+    
+ }
+
+
+
+.user_rating{
+    padding-left: 20px;
+}
+
+.text_comment{
+ 
+    color:#201D1D;
+    font-size: 12px;
+    font-weight: 200;
+    margin-right: 20px;
+    text-align: left;
+ }
+
+
+
+
+
+ 
+.rate {
+    float: left;
+    height: 20px;
+    padding: 0 10px;
+    color: #ffc700;   
+    position:relative;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:20px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+
+
+/*
+#stick_ref{
+
+    width: 1px ;
+    height: 300px;
+    background-color: purple;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+*/
+
+
+.rate_2 {
+    height: 20px;
+    color: #ffc700;    
+    position:relative;
+    bottom: 20px;
+    float: left;
+    left: 3.4%;
+    overflow: hidden;
+ 
+ }
+ .rate_2:not(:checked) > input {
+    position:relative;
+    top:-9999px;
+ }
+ .rate_2:not(:checked) > label {
+    float:left;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:16px;
+    color:#ffc700;
+ }
+ .rate_2:not(:checked) > label:before {
+    content: '★ ';
+ }
+ .rate_2 > input:checked ~ label {
+    color: #ffc700;    
+ }
+ 
+
+ 
+
+
+
+ .rate_3 {
+    height: 20px;
+    color: #ffc700;    
+    text-align: center;
+    position:relative;
+    left: 50%;
+ 
+ }
+ .rate_3:not(:checked) > input {
+    position:relative;
+    top:-9999px;
+ }
+ .rate_3:not(:checked) > label {
+    float:left;
+    width:0.8em;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:16px;
+    color:#ffc700;
+ }
+ .rate_3:not(:checked) > label:before {
+    content: '★ ';
+ }
+ .rate_3 > input:checked ~ label {
+    color: #ffc700;    
+ }
+ 
+ textarea {
+    background-color: #EBE1D2;
+    color: black;
+    font-size: 16px;
+    border: 2px solid gray;
+    width: 800px;
+    height: 100px;
+    
+ }
+ 
+ 
+ 
+ .forms_div{
+    text-align: center;
+ }
+
+ .footer_pages {
+    position: fixed;
+    padding: 10px 10px 0px 0px;
+    top: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    background: #EBE1D2;
+    height: 35px;
+    border-bottom: 2px solid #A39494;
+    color:#201D1D;
+   display: flex;
+   gap: 2%; /* adds 10px space between items */
+   z-index: 999; /* set a high z-index value to ensure the search bar is always on top */
+  }
+  
+  .button_foot{
+ 
+     
+    margin-left:10%;
+    background-color: #F6F6F6;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+ 
+ }
+ 
+ .forms_div input[type="submit"] {
+    border-color: #848484;
+    border-radius:8px;
+    border-width: .02em; 
+    border-style: solid;
+ 
+    width : 105px;
+    height: 20px;
+    font-weight: 60;
+    font-size: 11px;
+    position: relative;
+    color: black;
+    text-transform: none;
+    
+    cursor: pointer;
+ }
+
+ #int_f input{
+    border-color: #848484;
+    border-radius:8px;
+    border-width: .02em; 
+    border-style: solid;
+  }
+
+  .line_separator_2{
+    width: 83% ;
+    height: 1px;
+    background-color: #848484;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-51%, -50%);
+ }
+ 

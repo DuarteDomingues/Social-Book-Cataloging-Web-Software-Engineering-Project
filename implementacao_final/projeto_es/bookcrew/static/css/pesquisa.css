@@ -1,0 +1,162 @@
+body{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .search_top{
+    padding-left: 20px;
+    margin-left: 20px;
+  }
+
+  
+  input[type="search"] {
+    width: 300px;
+    height: 30px;
+    border: 1px solid gray;
+    font-size: 14px;
+    color: gray;
+    border-radius: 15px;
+    
+  }
+
+
+
+  .button_back{
+
+    left: 12px;
+    position: relative;
+    background-color:#EBE1D2;
+    color: black;
+ }
+
+ .numb_results{
+
+    color: black;
+    padding-left: 20px;
+    border-bottom: 1px solid #A7A7A7;
+    
+ }
+
+ .numb_results h3{
+    font-size: 12px;
+    font-weight: 600;
+ }
+
+ .book_info h5{
+ 
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    left: 15px;
+ 
+ }
+ .book_info h6{
+ 
+    font-size: 12px;
+    font-weight: 100;
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+ }
+ 
+ .book_info{
+    margin-right: 20px;
+    color: black;
+    padding-left: 20px;
+ }
+ 
+ .book_img{
+ 
+    height: 120px; 
+    width: 93px;
+    border-radius: 5px;
+ }
+ 
+ .want_read_button{
+ 
+    --border-color: #848484;
+    --ion-color-primary: #DAD0C2;
+    --border-radius:8px;
+    --border-width: .02em; 
+    --border-style: solid;
+    --ion-font-family: 'Roboto', sans-serif;
+ 
+    width : 105px;
+    height: 20px;
+    font-weight: 60;
+    font-size: 11px;
+    position: relative;
+    left: 20px;
+    bottom: 9px;
+    color: black;
+    --background-hover: #EBE1D2;
+    text-transform: none;
+    
+ 
+
+ }
+
+ #all_stuff{
+    background-color: #F6F6F6;
+
+ }
+
+ .line_separator_2{
+    width: 83% ;
+    height: 0.8px;
+    background-color: #848484;
+
+    position: relative;
+    top: 8%;
+    left: 50%;
+    transform: translate(-51%, -50%);
+ }
+ 
+
+#rating h3{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#rating{
+    padding-left:16px;
+    position: relative;
+    bottom: 35px;
+}
+#rating h3{
+    position: relative;
+    left:16px
+}
+ 
+
+
+.footer_pages {
+   position: fixed;
+   padding: 10px 10px 0px 0px;
+   top: 0;
+   width: 100%;
+   /* Height of the footer*/ 
+   background: #EBE1D2;
+   height: 35px;
+   border-bottom: 2px solid #A39494;
+   color:#201D1D;
+  display: flex;
+  gap: 2%; /* adds 10px space between items */
+  z-index: 999; /* set a high z-index value to ensure the search bar is always on top */
+ }
+ 
+ .button_foot{
+
+    
+   margin-left:10%;
+   background-color: #F6F6F6;
+   background:none;
+   border:none;
+   margin:0;
+   padding:0;
+   cursor: pointer;
+   font-weight: 500;
+   font-size: 15px;
+
+}
+
+ 

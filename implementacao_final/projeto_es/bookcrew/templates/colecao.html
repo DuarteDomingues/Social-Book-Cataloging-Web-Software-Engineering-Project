@@ -1,0 +1,218 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>colecao</title>
+    <link href="{% static 'css/colecao.css' %}" rel="stylesheet">
+  </head>
+
+<body>
+   
+  <div class="header_one" style="    height:38px;  ">
+    <!-- Default Searchbar -->
+<!--<div style="width: 81%; display: block; float: left; padding-left: 21px;"></div>-->
+<div class="footer_pages">
+  <div class="line"></div>
+  <form method="post">
+    {% csrf_token %}
+    {{ form_barra.casa }}
+      <input type="submit" value="Home" class="button_foot" name="butao_casa">
+  
+    </form>
+  
+  
+    <form method="post">
+      {% csrf_token %}
+      {{ form_barra.colecao }}
+        <input type="submit" value="Collection" class="button_foot" name="butao_colecao">
+    
+      </form>
+  
+  
+      <form method="post">
+        {% csrf_token %}
+        {{ form_barra.procura }}
+          <input type="submit" value="Search" class="button_foot" name="butao_procura">
+      
+        </form>
+  
+  
+        <form method="post">
+          {% csrf_token %}
+          {{ form_barra.perfil }}
+            <input type="submit" value="Profile" class="button_foot" name="butao_perfil">
+        
+          </form>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form_barra.logout }}
+              <input type="submit" value="Logout" class="button_foot" name="butao_logout">
+          
+        </form>
+      
+
+
+</div>
+
+  </div>
+  
+    <div class="overview">
+  
+      <h3>Collection</h3>
+     <div class="line_separator"></div>
+  
+  <br>
+      <div class="collection_div">
+        <div id="tag">
+        <h4>Already read</h4>
+      </div>
+        <br>
+        <br>
+        <br>
+        
+        {% if lista_ler %}
+        {% for livro in lista_ler %}
+        <a href="{% url 'livro' livro.id_livro %}">
+
+        <div class="box_1" (click)="goToBook()">
+          {% if livro.ref_foto == "default" %}
+
+          <img class="book_img"    src="{% static 'images/default.jpg' %}"  >
+          
+          {% else %}
+
+          <img class="book_img"    src="{{livro.ref_foto}}"  >
+          
+          {% endif %}
+          <h3>{{livro.titulo}}</h3>
+     
+          <h5>{{livro.autor}}</h5>
+
+          <form method="post">
+            {% csrf_token %}
+            {{ form_barra.read }}
+              <input type="submit" value="-" class="button_footx" name="butao_read">
+              <input type="hidden" id="hid_read" name="hid_read" value={{livro.id_livro}}> 
+  
+          </form>
+
+
+  
+        </div>
+      </a>
+
+        {% endfor %}
+        {% endif %}
+
+        
+  
+      </div>
+  
+      <br>
+  
+      <div class="collection_div">
+        <div id="tag">
+        <h4>Reading</h4>
+      </div>
+        <br>
+        <br>
+        <br>
+  
+        
+        {% if lista_ja_leu %}
+        {% for livro in lista_ja_leu %}
+        <a href="{% url 'livro' livro.id_livro %}">
+
+        <div class="box_1" (click)="goToBook()">
+          {% if livro.ref_foto == "default" %}
+
+          <img class="book_img"    src="{% static 'images/default.jpg' %}"  >
+          
+          {% else %}
+
+          <img class="book_img"    src="{{livro.ref_foto}}"  >
+          
+          {% endif %}
+          <h3>{{livro.titulo}}</h3>
+          <h5>{{livro.autor}}</h5>
+          
+
+
+           
+          <form method="post">
+          {% csrf_token %}
+          {{ form_barra.reading }}
+            <input type="submit" value="-" class="button_footx" name="butao_reading">
+            <input type="hidden" id="hid_reading" name="hid_reading" value={{livro.id_livro}}> 
+
+        </form>
+
+
+
+        </div>
+      </a>
+        {% endfor %}
+        {% endif %}
+
+       
+        
+  
+      </div>
+      <br>
+  
+      <div class="collection_div">
+        <div id="tag">
+        <h4>Want to Read</h4>
+      </div>
+        <br>
+        <br>
+        <br>
+  
+        {% if lista_a_ler %}
+        {% for livro in lista_a_ler %}
+        <a href="{% url 'livro' livro.id_livro %}">
+
+        <div class="box_1" (click)="goToBook()">
+
+          {% if livro.ref_foto == "default" %}
+
+          <img class="book_img"    src="{% static 'images/default.jpg' %}"  >
+          
+          {% else %}
+
+          <img class="book_img"    src="{{livro.ref_foto}}"  >
+          
+          {% endif %}
+
+          <h3>{{livro.titulo}}</h3>
+     
+          <h5>{{livro.autor}}</h5>
+
+          <form method="post">
+            {% csrf_token %}
+            {{ form_barra.reading }}
+              <input type="submit" value="-" class="button_footx" name="butao_want_read">
+              <input type="hidden" id="hid_want" name="hid_want" value={{livro.id_livro}}> 
+          </form>
+  
+  
+        </div>
+      </a>
+        {% endfor %}
+        {% endif %}
+       
+        
+        
+  
+      </div>
+  
+    </div>
+  
+    
+    
+  
+  
+</body>  
+</html>
