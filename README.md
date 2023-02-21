@@ -19,5 +19,6 @@ reviews and comments, book collections and a buddy system.
 * The folder arq_detalhada contains a pdf file with the project detailed architecture.
 * The folder implementacao_teste contains python code with the tests developed in the project.
 * The folder implementacao_final contains the final project code, developed in Django.
+* The folder relatorio contains the final project report.
 
 
