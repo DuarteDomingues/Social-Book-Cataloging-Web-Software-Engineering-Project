@@ -1,6 +1,6 @@
 # Social-Book-Cataloging-Web-Software-Engineering-Project
 
-### Final project of the course ES (Engenharia de Software)
+### Final project of the subject ES (Engenharia de Software)
 
 Mestrado Engenharia Informática e Multimédia - ISEL
 
