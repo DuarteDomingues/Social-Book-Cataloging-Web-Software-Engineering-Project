@@ -1,7 +1,7 @@
 # Social-Book-Cataloging-Web-Software-Engineering-Project
 Social Book Cataloging Web Software Engineering Project
 
-### Technologies used: Python, Django, UML
+### Technologies used: Python, Django, UML, HTML, CSS, JavaScript
 
 In this project a computer application was developed, based on several techniques and 
 software engineering fundamentals. 
