@@ -9,3 +9,4 @@ The developed developed  is a Web application for cataloging, searching and shar
 The application has a set of functionalities such as 
 reviews and comments, book collections and a buddy system.
 
+## Technologies used: Python, Django, UML
