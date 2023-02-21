@@ -1,6 +1,6 @@
 # Social-Book-Cataloging-Web-Software-Engineering-Project
 
-### Final project of the course IASC (Inteligência Artificial para Sistemas Coginitivos)
+### Final project of the course ES (Engenharia de Software)
 
 Engenharia Informática e Multimédia - ISEL
 
