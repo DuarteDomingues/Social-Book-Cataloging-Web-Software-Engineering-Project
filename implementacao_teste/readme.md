@@ -1,4 +1,4 @@
-## IMPORTANTE : para correr o teste, correr o ficheiro teste.bat
+IMPORTANTE : para correr o teste, correr o ficheiro teste.bat
 
 * Teste contém diferentes testes de casos de utilização, teste de acesso a dados
 
