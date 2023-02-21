@@ -1,5 +1,4 @@
 # Social-Book-Cataloging-Web-Software-Engineering-Project
-Social Book Cataloging Web Software Engineering Project
 
 ### Final project of the course IASC (Inteligência Artificial para Sistemas Coginitivos)
 
